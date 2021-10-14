@@ -2,7 +2,14 @@ function seed(...args) {
   return args;
 }
 
-function same([x, y], [j, k]) {}
+function same([x, y], [j, k]) {
+  if(JSON.stringify(x) !== JSON.stringify(j)) {
+    return false;
+  }else if(JSON.stringify(y) !== JSON.stringify(k)) {
+    return false;
+  }
+  return true;
+}
 
 // The game state to search for `cell` is passed as the `this` value of the function.
 function contains(cell) {}
