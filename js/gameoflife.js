@@ -3,16 +3,20 @@ function seed(...args) {
 }
 
 function same([x, y], [j, k]) {
-  if(JSON.stringify(x) !== JSON.stringify(j)) {
+  if (JSON.stringify(x) !== JSON.stringify(j)) {
     return false;
-  }else if(JSON.stringify(y) !== JSON.stringify(k)) {
+  } else if (JSON.stringify(y) !== JSON.stringify(k)) {
     return false;
   }
   return true;
 }
 
 // The game state to search for `cell` is passed as the `this` value of the function.
-function contains(cell) {}
+function contains(cell) {
+  return this.some(function (c) {
+    return same(c, cell);
+  })
+}
 
 const printCell = (cell, state) => {};
 
